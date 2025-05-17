@@ -31,8 +31,7 @@ jobs:
       with:
         version: 'v1.27.0'
 
-    - name: Create .kube directory
-<<<<<<< HEAD
+    - name: Set up .kube directory
       run: mkdir -p $HOME/.kube
 
 >>>>>>> update deploy.yml about directory for kube config
