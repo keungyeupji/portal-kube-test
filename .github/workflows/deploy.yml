@@ -35,13 +35,10 @@ jobs:
 <<<<<<< HEAD
       run: mkdir -p $HOME/.kube
 
-=======
-      run: mkdir -p $HOME/hadoop/.kube 
-    
 >>>>>>> update deploy.yml about directory for kube config
     - name: Set kubeconfig
       run: |
-        echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 -d > $HOME/hadoop/.kube/config
+        echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 -d > $HOME/.kube/config
 
     - name: Deploy to Kubernetes
       run: |
