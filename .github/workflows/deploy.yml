@@ -34,7 +34,6 @@ jobs:
     - name: Set up .kube directory
       run: mkdir -p $HOME/.kube
 
->>>>>>> update deploy.yml about directory for kube config
     - name: Set kubeconfig
       run: |
         echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 -d > $HOME/.kube/config
