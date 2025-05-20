@@ -21,15 +21,11 @@ jobs:
     - name: Push Docker image to Docker Hub
       run: docker push kydocker066/portal-app:latest
 
-    - name: Set kubectl context
-      run: |
-        mkdir -p $HOME/.kube
-        echo "${{ secrets.KUBECONFIG_CONTENTS }}" > $HOME/.kube/config
-        chmod 600 $HOME/.kube/config
-
     - name: Set up kubeconfig
       run: |
+        mkdir -p ~/.kube
         echo "${{ secrets.KUBECONFIG_CONTENT }}" | base64 -d > ~/.kube/config
+        chmod 600 ~/.kube/config
 
     - name: Deploy to Kubernetes
       run: |
