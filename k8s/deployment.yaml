@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-portal-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: portal-app
+  template:
+    metadata:
+      labels:
+        app: portal-app
+    spec:
+      containers:
+      - name: my-portal-container
+        image: kydocker066/portal-app:latest
+        ports:
+        - containerPort: 5000
+
