@@ -29,5 +29,5 @@ jobs:
 
     - name: Deploy to Kubernetes
       run: |
-        kubectl set image deployment/portal-app-deployment portal-app-container=kydocker066/portal-app:latest
+        kubectl set image deployment/my-portal-deployment portal-app-container=kydocker066/portal-app:latest
         kubectl rollout status deployment/my-portal-deployment
