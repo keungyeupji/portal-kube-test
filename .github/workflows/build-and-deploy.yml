@@ -23,7 +23,9 @@ jobs:
 
     - name: Set up kubeconfig #25.5.28 new
       run: |
+        mkdir -p $HOME/.kube
         echo "${{ secrets.KUBECONFIG_CONTENT }}" | base64 -d > $HOME/.kube/config
+        chmod 600 $HOME/.kube/config
         kubectl get nodes  # 디버깅용 추가
 
     - name: Deploy to Kubernetes
