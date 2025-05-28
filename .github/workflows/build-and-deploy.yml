@@ -21,7 +21,7 @@ jobs:
     - name: Push Docker image to Docker Hub
       run: docker push kydocker066/portal-app:latest
 
-    - name: Set up kubeconfig
+    - name: Set up kubeconfig #25.5.28 new
       run: |
         mkdir -p ~/.kube
         echo "${{ secrets.KUBECONFIG_CONTENT }}" | base64 -d > ~/.kube/config
